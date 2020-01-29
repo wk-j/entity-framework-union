@@ -73,6 +73,8 @@ namespace GroupBy.Controllers {
             var query =
                 context.Student11.Select(x => x.Name)
                     .Union(context.Student22.Select(x => x.Name))
+                    .OrderBy(x => x)
+                    .Take(10)
                     .ToList();
             return query;
         }
